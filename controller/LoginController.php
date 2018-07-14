@@ -4,21 +4,21 @@
 
 	public function loginUserController(){
 
-		if(isset($_POST["usuarioacceso"])
+		if(isset($_POST["emailacceso"])
 			){
 			$datoController=array(
-			"usuario"=>$_POST["usuarioacceso"],
+			"email"=>$_POST["emailacceso"],
 			"password"=>$_POST["passwordacceso"]			
 			);
-		$respuesta = LoginModel::loginUserModel($datoController,"usuario");
+		$respuesta = LoginModel::loginUserModel($datoController,"user");
 		 // var_dump($respuesta);
-		if($respuesta["usuario"]==$_POST["usuarioacceso"] && $respuesta["password"]==$_POST["passwordacceso"]){
+		if($respuesta["email"]==$_POST["emailacceso"] && $respuesta["password"]==$_POST["passwordacceso"]){
 			// echo "Hola perro".$respuesta["usuario"];
 
 			// inicia la sesion de nombre "validar" con valor verdadero
 			session_start();
 			$_SESSION["validar"]=true;
-			$_SESSION["usuario"] = $respuesta["usuario"];
+			$_SESSION["usuario"] = $respuesta["email"];
 
 			// header("location:welcome");
 			print "<script>window.location='welcome';</script>";

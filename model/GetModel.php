@@ -6,18 +6,27 @@ class GetModel{
 
 	public function Get($url){
 		// SI en la url hay estos valores
-		if( $url=="inicio"||
-			$url=="registro"||
-			$url=="slide"||
+		if( 
+			//Main views
 			$url=="welcome"||
-			$url=="students"||
-			$url=="videos"||
-			$url=="suscriptores"||
-			$url=="mensajes"||
-			$url=="perfil"||
-			$url=="usuarios"||
+			$url=="student"||
+			$url=="instructor"||
+			$url=="course"||								
+			//Actions
 			$url=="exit"||
-			$url=="editar"
+			//Editions
+			$url=="editwelcome"||
+			$url=="editstudent" ||
+			$url=="editinstructor"||
+			$url=="editcourse" ||
+			// Adds
+			$url=="addwelcome" ||
+			$url=="addstudent" ||
+			$url=="addinstructor"||
+			$url=="addcourse"
+			
+			
+
 			)
 		{
 			// entonces mandalo al que esté solicitando

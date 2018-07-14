@@ -1,0 +1,211 @@
+/*=====================================
+=            Genral styles            =
+=====================================*/
+/*----------  AFECTA GENERAL  ----------*/
+
+body{
+	padding-top: 50px;/*deja un espacio superior de 50px;*/
+	background: url('../img/texture.png') top left repeat;
+}
+
+.wrap{
+	/*Separaciones entre secciones*/
+	padding-top: 50px;
+	padding-bottom: 50px;
+}
+
+.header-section{
+	text-align: center;
+	-webkit-font-smoothing:antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+h1{
+	/*font-family: 'Graduate', cursive;*/
+}
+
+h2{
+	/*font-family: 'Pacifico',cursive;*/
+}
+
+#breadcrumb .container{
+	padding-top: 20px;
+	background: white;	
+	border-radius: 10px;
+	margin-bottom: -50%;
+}
+
+#breadcrumb .breadcrumb{
+	background: white;
+}
+
+
+
+
+/*=====  End of Genral styles  ======*/
+
+
+
+
+
+/*==========================================
+=            home or index .php            =
+==========================================*/
+
+/*----------  TITTLE & ENROLL  ----------*/
+/*Entra en el id enroll y justo en la clase jumbotron haz esto*/
+#title-enroll .jumbotron{
+	background: url('../img/mainBackground.png') 50% 0 no-repeat fixed;
+	-webkit-font-smoothing:antialiased;
+	text-rendering: optimizeLegibility;
+	text-align: center;	
+	color:white;
+}
+
+/*----------  WHAT CAN I DO  ----------*/
+
+#what-can-i-do{
+	text-align: center;
+}
+
+
+/*----------  DEVELOPER  ----------*/
+#developer{
+	background-color: #BF3E11;
+	color: white;
+}
+
+#developer .left-side{
+	text-align: center;
+}
+
+/*Cuando tiene varias clases*/
+.badge.social{
+	background:#95A5A6;
+	font-size: 20px;
+	height: 35px;
+	width: 35px;
+	text-align: center;
+	line-height: 35px;
+	margin-top: 5px;
+	padding: 0;
+	-webkit-border-radius:35px;
+	-moz-border-radius:35px;
+	border-radius: 35px;
+}
+
+.badge.social.twitter:hover{
+	background: #55ACEE;
+}
+
+.badge.social.linkedin:hover{
+	background: #55ACEE;
+}
+.badge.social.blog:hover{
+	background: #55ACEE;
+}
+
+/*----------  Promotional video  ----------*/
+#promo-video{
+	background: #563d7c;
+	color: white;
+}
+
+
+
+/*----------  Footer  ----------*/
+#footer{
+	padding: 20px;
+	background:#22313f;
+	color: white;
+}
+d
+#footer a{
+	color: #f5ab35;
+}
+
+#footer a:hover{
+color: #f9690e;
+}
+
+/*=====  End of home or index .php  ======*/
+
+
+
+/*====================================
+=            Welcome .php            =
+====================================*/
+
+#tableWelcome .container{
+	padding-top: 50px;
+	background: white;
+	min-height: 450px;
+	border-radius: 10px;
+}
+
+/*=====  End of Welcome .php  ======*/
+
+
+
+
+/*===================================
+=            Student.php            =
+===================================*/
+
+#tableStudent .container{
+	padding-top: 50px;
+	background: white;
+	min-height: 450px;
+	border-radius: 10px;
+}
+
+
+/*=====  End of Student.php  ======*/
+
+
+
+/*======================================
+=            instructor.php            =
+======================================*/
+
+#tableInstructor .container{
+	padding-top: 50px;
+	background: white;
+	min-height: 450px;
+	border-radius: 10px;
+}
+
+			
+
+/*=====  End of instructor.php  ======*/
+
+/*=================================
+=            course.php            =
+=================================*/
+
+#tableCourse .container{
+	padding-top: 50px;
+	background: white;
+	min-height: 450px;
+	border-radius: 10px;
+}
+
+/*=====  End of course.php  ======*/
+
+
+	
+
+/*========================================
+=            admin_course.php            =
+========================================*/
+
+/*----------  Admin course  ----------*/
+#admin-course .container{
+	background: white;
+	min-height: 600px; /*Coloca la altura de 600px al container para que no quede muy pequeño*/
+}
+
+#admin-course .panel-heading a{
+	color: white;
+}
+/*=====  End of admin_course.php  ======*/

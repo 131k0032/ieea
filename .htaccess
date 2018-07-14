@@ -1,0 +1,7 @@
+#IMPERDIR VER EL DIRECTORIO
+Options All -Indexes
+
+#Url Amigables
+RewriteEngine on
+
+RewriteRule ^(\w+)$ index.php?action=$1

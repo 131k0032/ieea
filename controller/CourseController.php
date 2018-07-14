@@ -3,7 +3,7 @@
 class CourseController{
 	
 	/*==================================
-	=            AddInstructor            =
+	=            AddCourse             =
 	==================================*/
 	
 		public function newCourseController(){

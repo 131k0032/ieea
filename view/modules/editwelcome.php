@@ -38,9 +38,9 @@
         <div class="row">
            <div class="col-sm-12">
              <ul class="breadcrumb">
-                <li><a href="welcome">Welcome</a></li>   
+                <li><a href="welcome">Inicio</a></li>   
                                                         
-                <li class="active">Edit status</li>
+                <li class="active">Editar estado</li>
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->

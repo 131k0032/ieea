@@ -5,7 +5,7 @@
  		 return $link;
  		//var_dump($link);
 
-
+ 		 mysqli_set_charset($link, 'utf8');
  	}
  }
 

@@ -38,8 +38,8 @@
         <div class="row">
            <div class="col-sm-12">
              <ul class="breadcrumb">
-                <li><a href="welcome">Welcome</a></li>                                         
-                <li class="active">Add welcome</li>
+                <li><a href="welcome">Inicio</a></li>                                         
+                <li class="active">Añadir Registros</li>
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->
@@ -62,10 +62,10 @@
               <form class="form-horizontal" method="post">                
 
                 <div class="form-group">
-                    <label class="control-label col-sm-2" for="psw">Student:</label>
+                    <label class="control-label col-sm-2" for="psw">Estudiante:</label>
                     <div class="col-sm-10">                        
                       <select class="form-control" size="5" required name="idalumno">';
-                            <option value="" >Choose</option>
+                            <option value="" >Elije uno</option>
                               <?php
                                 $getStudenId = new StudentController();
                                 $getStudenId -> getAllStudentControllerForId();
@@ -74,10 +74,10 @@
                     </div>                  
                   </div>
                   <div class="form-group">
-                    <label class="control-label col-sm-2" for="psw">Course:</label>
+                    <label class="control-label col-sm-2" for="psw">Curso:</label>
                     <div class="col-sm-10">                        
                       <select class="form-control" size="5"  required name="idcurso">';
-                             <option value="" >Choose</option>
+                             <option value="" >Elije uno</option>
                              <?php 
                               $getCourseId = new CourseController();
                               $getCourseId -> getAllCourseControllerForId();
@@ -87,10 +87,10 @@
                   </div>
 
                   <div class="form-group">
-                    <label class="control-label col-sm-2" for="psw">Status:</label>
+                    <label class="control-label col-sm-2" for="psw">Estado:</label>
                     <div class="col-sm-10">                        
                       <select class="form-control" required name="idstatus">';
-                             <option value="" >Choose</option>
+                             <option value="" >Elije uno</option>
                             <?php 
                               $getStatusId = new StatusController();
                               $getStatusId->getAllStatusControllerForId();
@@ -100,9 +100,21 @@
                   </div>
                 <div class="form-group"> 
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Añadir</button>
                   </div>
-                </div>              
+                </div> 
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="psw">Info</label>
+                    <div class="col-sm-10">                        
+                      <div class="alert alert-danger alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>Alerta!</strong> Si no hay registros de <a href="addstudent"> estudiantes </a> o <a href="addcourse">cursos</a> en la lista para seleccionar, añada primero registros e intentelo de nuevo.                        
+                    </div>
+                    </div>                  
+                  </div>
+            
+   
                    <!-- Calling final methods here -->   
 
                    <?php 

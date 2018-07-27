@@ -113,7 +113,7 @@ require_once "model/Conexion.php";
 
 			#BORAR TALLERES
 		#--------------------------------------
-		public function delCourseModel($datosModel, $tabla){
+		/*public function delCourseModel($datosModel, $tabla){
 			$statement = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id=:id");
 			$statement->bindParam(":id",$datosModel,PDO::PARAM_INT);
 
@@ -127,7 +127,7 @@ require_once "model/Conexion.php";
 			// cierra las consultas
 			$statement->close();
 
-			}
+			}*/
 
 
 

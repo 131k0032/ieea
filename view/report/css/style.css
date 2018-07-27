@@ -47,6 +47,13 @@ h1 {
   background: url(img/dimension.png);
 }
 
+h3{
+  color: #5D6975;
+  text-align: center;    
+  display: inline-block;
+  /*font-size: 0.8em;*/
+}
+
 #project {
   float: left;
 }

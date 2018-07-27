@@ -32,6 +32,8 @@ require_once "model/Conexion.php";
 				$statement->execute();
 				// Obtaining all results
 				return $statement->fetchAll();
+
+
 				
 			// Close de statement started
 			$statement->close();
@@ -42,7 +44,6 @@ require_once "model/Conexion.php";
 		public function getAllStudentModelForId($tabla){
 			$statement=Conexion::conectar()->prepare("SELECT id, name, lastname, created_at FROM $tabla");
 			$statement->execute();
-
 			return $statement->fetchAll();
 		}
 
@@ -95,7 +96,7 @@ require_once "model/Conexion.php";
 
 			#BORAR ALUMNOS
 		#--------------------------------------
-		public function delStudentModel($datosModel, $tabla){
+		/*public function delStudentModel($datosModel, $tabla){
 			$statement = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id=:id");
 			$statement->bindParam(":id",$datosModel,PDO::PARAM_INT);
 
@@ -109,7 +110,7 @@ require_once "model/Conexion.php";
 			// cierra las consultas
 			$statement->close();
 
-			}
+			}*/
 
 
 

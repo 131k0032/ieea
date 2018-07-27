@@ -23,11 +23,39 @@ class InstructorController{
 				$respuesta = InstructorModel::newInstructorModel($datoController,"instructor");
 
 		if($respuesta=="success"){
-			// header("location:index.php?action=ok");
-			  print "<script>alert(\"Registro exitoso.\");window.location='instructor';</script>";
-		}else{
-			header("location:index.php");
-		}
+					// header("location:index.php?action=ok");
+					  // print "<script>alert(\"Registro exitoso.\");window.location='welcome';</script>";
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Info added successfully",
+										type:"success",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="instructor";
+				 					}
+				 				});
+				 		</script>';
+
+				}else{
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Error please try again",
+										type:"error",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="instructor";
+				 					}
+				 				});
+				 		</script>';
+				}
 		}
 	
 	}
@@ -62,8 +90,12 @@ class InstructorController{
 	              echo '</td>
 	              <td>'.$item["created_at"].'</td>
 	              <td style="width:130px;">
-	                <a href="index.php?action=editinstructor&id='.$item['id'].'" class="btn btn-warning btn-xs">Editar</a> 
-	                <a href="index.php?action=instructor&idBorrar='.$item['id'].'" class="btn btn-danger btn-xs" >Eliminar</a>
+
+							<a href="index.php?action=editinstructor&id='.$item['id'].'" class="btn btn-warning btn-xs">Editar instructor</a> 
+
+				
+
+
                 </td>
               </tr>';
 		}	
@@ -86,14 +118,14 @@ class InstructorController{
 		echo '  <input type="hidden" value="'.$respuesta["id"].'" name="idEditar">
 
 				<div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Name:</label>
+                  <label class="control-label col-sm-2" for="pwd">Nombre:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["name"].'" name="nombreEditar" class="form-control" id="pwd" placeholder="Enter name">
                   </div>
                 </div>
 
                  <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Lastname:</label>
+                  <label class="control-label col-sm-2" for="pwd">Apellido:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["lastname"].'" name="apellidoEditar" class="form-control" id="pwd" placeholder="Enter lastname">
                   </div>
@@ -107,21 +139,21 @@ class InstructorController{
                 </div> 
 
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Age:</label>
+                  <label class="control-label col-sm-2" for="pwd">Edad:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["age"].'" name="edadEditar" class="form-control" id="pwd" placeholder="Enter age">
                   </div>
                 </div> 
 
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Address:</label>
+                  <label class="control-label col-sm-2" for="pwd">Dirección:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["address"].'" name="direccionEditar" class="form-control" id="pwd" placeholder="Enter address">
                   </div>
                 </div> 
 
                 <div class="form-group">
-		              <label class="control-label col-sm-2" for="psw">Is active:</label>
+		              <label class="control-label col-sm-2" for="psw">Estado:</label>
 		              <div class="col-sm-10">		               							
 		                <select class="form-control" name="activoEditar">';		                            
 		                			if($respuesta["is_active"]!=null && $respuesta["is_active"]==1){
@@ -140,7 +172,7 @@ class InstructorController{
 
 
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Created at:</label>
+                  <label class="control-label col-sm-2" for="pwd">Fecha Registro:</label>
                   <div class="col-sm-10"> 
                     <input type="text" readonly value="'.$respuesta["created_at"].'" name="fechaEditar" class="form-control" id="pwd" placeholder="Created at">
                   </div>
@@ -148,7 +180,7 @@ class InstructorController{
 
                 <div class="form-group"> 
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
                   </div>
                 </div>';
 
@@ -181,10 +213,38 @@ class InstructorController{
 			// echo $respuesta;
 				
 				if($respuesta=="success"){
-					  print "<script>alert(\"Cambios guardados.\");window.location='instructor';</script>";					
-				}else{
-					echo "Error";
+					// header("location:index.php?action=ok");
+					  // print "<script>alert(\"Registro exitoso.\");window.location='welcome';</script>";
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Info updated successfully",
+										type:"success",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="instructor";
+				 					}
+				 				});
+				 		</script>';
 
+				}else{
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Error please try again",
+										type:"error",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="instructor";
+				 					}
+				 				});
+				 		</script>';
 				}
 		}
 
@@ -198,18 +258,44 @@ class InstructorController{
 =            Delet Instructors            =
 ======================================*/
 
-	public function delInstructorController(){
+	/*public function delInstructorController(){
 		if(isset($_GET["idBorrar"])){
 			$datosController=$_GET["idBorrar"];
 			$respuesta=InstructorModel::delInstructorModel($datosController,"instructor");
 			if ($respuesta=="success") {
-				print "<script>alert(\"Eliminado.\");window.location='instructor';</script>";				
+			  echo '<script>							
+		 			swal({
+		 					title: "Success",
+								text:"Info deleted successfully",
+								type:"success",
+								confirmButtonText:"Ok",
+		 					closeOnConfirm:false
+		 				},
+		 				function(isConfirm){
+		 					if(isConfirm){
+		 						window.location="instructor";
+		 					}
+		 				});
+		 		</script>';		
 			}else{
-				echo "error";
+				 echo '<script>							
+			 			swal({
+			 					title: "Success",
+									text:"Error please try again",
+									type:"error",
+									confirmButtonText:"Ok",
+			 					closeOnConfirm:false
+			 				},
+			 				function(isConfirm){
+			 					if(isConfirm){
+			 						window.location="instructor";
+			 					}
+			 				});
+			 		</script>';
 			}
 		}
 
-	}
+	}*/
 
 }
 

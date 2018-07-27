@@ -40,7 +40,7 @@
            <div class="col-sm-12">
              <ul class="breadcrumb">
                 <li><a href="welcome">Inicio</a></li>                
-                <li class="active">Todos los registros</li>
+                <li class="active">Configuración</li>
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->
@@ -54,25 +54,25 @@
 =            Students            =
 ===============================-->
 
-    <section class="wrap" id="tableStudent">
+    <section class="wrap" id="tableSetting">
       <div class="container">
       <div class="row">
         <div class="col-sm-5  col-sm-offset-4 col-xs-4 col-xs-offset-3">
 
 
           <div class="btn-group">
-            <a href="addwelcome"><button type="submit" class="btn btn-success">Añadir registro</button></a><!-- .btn -->
+            <a href="addsetting"><button type="submit" class="btn btn-success">Añadir usuario</button></a><!-- .btn -->
           </div><!-- .btn-group -->
 
 
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle"
                     data-toggle="dropdown">
-              Descargar reporte<span class="caret"></span>
+              Descargar reporte <span class="caret"></span>
             </button><!-- .btn -->
            
             <ul class="dropdown-menu" role="menu">
-              <li><a href="view/report/welcome-report.php" target="_blank"> General reporte</a></li>
+              <li><a href="view/report/welcome-report.php" target="_blank">User report</a></li>
 <!--               <li><a href="#">Acción #2</a></li>
               <li><a href="#">Acción #3</a></li>
               <li class="divider"></li>
@@ -85,25 +85,24 @@
       <hr>
         <div class="row">
           <div class="col-sm-10 col-sm-offset-1">                       
-              <table id="student" class="table table-striped table-bordered dt-responsive nowrap">
+              <table id="setting" class="table table-striped table-bordered dt-responsive nowrap">
                   <thead>
                     <tr>
-                        <th>Estudiante</th>
-                        <th>Apellido Estudiante</th>                        
-                        <th>Instructor</th>                        
-                        <th>Email Instructor</th>
-                        <th>Estado Curso</th>
-                        <th>Nombre Curso</th>
-                        <th>Categoria Curso</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>                                                
+                        <th>Email</th>
+                        <th>Fecha registro</th>
+                        <th>Es admin</th>
+                        <th>es activo</th>
                         <th>Acción</th>
                     </tr>
                 </thead>
                   <tbody>
                       
                       <?php 
-                          $user = new WelcomeController();
-                          $user->getAllWelcomeController();
-                          $user->delWelcomeController();
+                          $user = new SettingController();
+                          $user->getAllSettingController();
+                          $user->delSettingController();
                        ?>
                   </tbody>
               </table><!-- .table-->                         
@@ -130,7 +129,7 @@
 
     <script>
       $(document).ready(function() {
-        $('#student').DataTable();
+        $('#setting').DataTable();
         } );
     </script>
 

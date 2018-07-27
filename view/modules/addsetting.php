@@ -39,8 +39,8 @@
            <div class="col-sm-12">
              <ul class="breadcrumb">
                 <li><a href="welcome">Inicio</a></li>                
-                <li><a href="student">Estudiante</a></li>               
-                <li class="active">Añadir estudiante</li>
+                <li><a href="setting">configuración</a></li>               
+                <li class="active">Añadir Usuario</li>
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->
@@ -55,7 +55,7 @@
 =            Students            =
 ===============================-->
 
-    <section class="wrap" id="tableStudent">
+    <section class="wrap" id="tableSetting">
       <div class="container">
       <hr>
         <div class="row">
@@ -64,19 +64,63 @@
                <div class="form-group">
                   <label class="control-label col-sm-2" for="pwd">Nombre:</label>
                   <div class="col-sm-10"> 
-                    <input type="text"  name="usuarioregistro" class="form-control" id="pwd" placeholder="Enter name">
+                    <input type="text" required  name="nombreregistro" class="form-control" id="pwd" placeholder="Enter name">
                   </div>
                 </div>
 
                  <div class="form-group">
                   <label class="control-label col-sm-2" for="pwd">Apellido:</label>
                   <div class="col-sm-10"> 
-                    <input type="text" name="apellidoregistro" class="form-control" id="pwd" placeholder="Enter lastname">
+                    <input type="text" required name="apellidoregistro" class="form-control" id="pwd" placeholder="Enter lastname">
                   </div>
                 </div> 
+
+                  <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">Contraseña:</label>
+                  <div class="col-sm-10"> 
+                    <input type="password" required name="passwordregistro" class="form-control" id="pwd" placeholder="Enter password">
+                  </div>
+                </div>
+
+
+                <div class="form-group">
+                  <label class="control-label col-sm-2" for="pwd">Email:</label>
+                  <div class="col-sm-10"> 
+                    <input type="email" required name="emailregistro" class="form-control" id="pwd" placeholder="Enter email">
+                  </div>
+                </div> 
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="psw">Es admin:</label>
+                    <div class="col-sm-10">                        
+                      <select class="form-control" required name="is_admin_value">';
+                             <option value="" >Elige</option>                                        
+                             <option value="1" >Administrator</option>
+                             <option value="0" >No administrator</option>
+                        </select>
+                    </div>                  
+                  </div>
+
+                  <div class="form-group">
+                    <label class="control-label col-sm-2" for="psw">Es activo:</label>
+                    <div class="col-sm-10">                        
+                      <select class="form-control" required name="is_active_value">';
+                             <option value="" >Elige</option>                                        
+                             <option value="1" >Activo</option>
+                             <option value="0" >Inactivo</option>
+                        </select>
+                    </div>                  
+                  </div>
+
+
+                 
+            
+
+
+             
                 <div class="form-group"> 
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Registrar</button>
+                    <button type="submit" class="btn btn-success">Añadir</button>
                   </div>
                 </div>
                
@@ -85,8 +129,8 @@
                <!-- Call methods here -->   
 
                <?php 
-                  $student = new StudentController();
-                  $student->newStudentController();                
+                  $user = new SettingController();
+                  $user->newSettingController();                
                 ?>                          
               </form><!-- .form-horizontal-->
           </div><!-- .col -->

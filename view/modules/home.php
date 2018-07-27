@@ -44,19 +44,19 @@
             <div class="col-sm-4">
                 <img src="view/assets/img/learn-3.png" class="img-circle" alt="">
                 <h3>Alumnos</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ducimus corporis blanditiis ullam magnam fuga at perferendis et! Quasi delectus, illo sequi repellendus placeat odit doloremque molestias, expedita cupiditate dolore.</p>
+                <p>Registra alumons los cuales podrán tomar varios cursos.</p>
             </div>
 
               <div class="col-sm-4">
                 <img src="view/assets/img/learn-3.png" class="img-circle" alt="">
                 <h3>Talleres</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ducimus corporis blanditiis ullam magnam fuga at perferendis et! Quasi delectus, illo sequi repellendus placeat odit doloremque molestias, expedita cupiditate dolore.</p>
+                <p>Estos son los mas importantes y destacados del sitio</p>
             </div>
 
               <div class="col-sm-4">
                 <img src="view/assets/img/learn-3.png" class="img-circle" alt="">
                 <h3>Docentes</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia ducimus corporis blanditiis ullam magnam fuga at perferendis et! Quasi delectus, illo sequi repellendus placeat odit doloremque molestias, <em>expedita cupiditate dolore.</em></p>
+                <p>Sin estos guias no podriamos comer</p>
             </div>
 
 
@@ -79,7 +79,7 @@
             <div class="row">
               <div class="col-sm-4 left-side" >
                 <img src="view/assets/img/instructor.png" class="img-circle" alt="">
-                <p><h4>Juan perez cano</h4></p>
+                <p><h4>Irvin Catzin Itza</h4></p>
                 <p>
                   <a href="https://wwww.twitter.con" target="blank_" class="badge social twitter"><i class="fa fa-twitter"></i></a>
                   <a href="https://wwww.twitter.con" target="blank_" class="badge social linkedin"><i class="fa fa-linkedin"></i></a>
@@ -88,14 +88,7 @@
               </div>
 
               <div class="col-sm-8">
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Commodi officiis nulla illo ea harum quia enim repudiandae accusantium tenetur dicta nostrum ex, quo odio similique officia voluptatibus rem veritatis nobis.</p>
-                <p class="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illum illo eaque sequi veniam iste tempora harum voluptatem veritatis! Ut eius, harum dolor cum velit totam veniam unde, error non consectetur.
-                </p>
-                <p class="lead">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nulla quasi, debitis blanditiis similique? Totam soluta maiores eos aliquam, commodi rerum molestiae laudantium placeat quaerat modi? Aliquid aliquam, accusantium consequatur vero!
-                </p>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum labore, sunt, incidunt nobis nam eius minus similique voluptate nihil modi excepturi est vitae, molestiae animi consectetur inventore quos! Eum, illum.</p>
+                <p class="lead">Superprogramador master con 20 años de experiencia en el area ¿Qué mas quieren?</p>
               </div>
             </div>
           </div><!-- .row -->

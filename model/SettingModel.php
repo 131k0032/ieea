@@ -1,20 +1,20 @@
 <?php 
 require_once "model/Conexion.php";
 
-	class InstructorModel {
+	class SettingModel {
 		#REGISTRO DE USUARIOS
 		#--------------------------------------
-		public function newInstructorModel($datosModel, $tabla){
-			$statement = Conexion::conectar()->prepare("INSERT INTO  $tabla (name,lastname, email,age,address,created_at,is_active) 
+		public function newSettingModel($datosModel, $tabla){
+			$statement = Conexion::conectar()->prepare("INSERT INTO  $tabla (name,lastname,password, email,created_at,is_admin,is_active) 
 				VALUES 
-				(:name,:lastname, :email,:age,:address,:created_at,:is_active)");
+				(:name,:lastname,:password,:email,:created_at,:is_admin,:is_active)");
 
 			$statement->bindParam(":name",$datosModel["name"],PDO::PARAM_STR);
 			$statement->bindParam(":lastname",$datosModel["lastname"],PDO::PARAM_STR);
+			$statement->bindParam(":password",$datosModel["password"],PDO::PARAM_STR);
 			$statement->bindParam(":email",$datosModel["email"],PDO::PARAM_STR);
-			$statement->bindParam(":age",$datosModel["age"],PDO::PARAM_STR);
-			$statement->bindParam(":address",$datosModel["address"],PDO::PARAM_STR);
-			$statement->bindParam(":created_at",$datosModel["created_at"],PDO::PARAM_STR);
+			$statement->bindParam(":created_at",$datosModel["created_at"],PDO::PARAM_STR);			
+			$statement->bindParam(":is_admin",$datosModel["is_admin"],PDO::PARAM_STR);
 			$statement->bindParam(":is_active",$datosModel["is_active"],PDO::PARAM_STR);
 
 			if($statement->execute()){
@@ -31,8 +31,8 @@ require_once "model/Conexion.php";
 
 		#VISUALIZAR DE USUARIOS
 		#--------------------------------------
-		public function getAllInstructorModel($tabla){
-				$statement = Conexion::conectar()->prepare("SELECT id, name, lastname, email, age, address,is_active, created_at FROM $tabla");
+		public function getAllSettingModel($tabla){
+				$statement = Conexion::conectar()->prepare("SELECT id, name, lastname, password,  email, created_at, is_admin, is_active FROM $tabla");
 				$statement->execute();
 				// Obtaining all results
 				return $statement->fetchAll();
@@ -46,8 +46,8 @@ require_once "model/Conexion.php";
 
 			#EDITAR USUARIOS
 		#--------------------------------------
-		public function editInstructorModel($idModel, $tabla){
-				$statement = Conexion::conectar()->prepare("SELECT id, name, lastname, email, age, address, created_at,is_active FROM $tabla where id=:id");
+		public function editSettingModel($idModel, $tabla){
+				$statement = Conexion::conectar()->prepare("SELECT id, name, lastname, password, is_admin, is_active FROM $tabla where id=:id");
 				$statement->bindParam(":id",$idModel,PDO::PARAM_INT);
 				$statement->execute();
 				
@@ -63,16 +63,14 @@ require_once "model/Conexion.php";
 
 			#ACTUALIZAR USUARIOS
 		#--------------------------------------
-		public function updateInstructorModel($datosModel, $tabla){
-				$statement = Conexion::conectar()->prepare("UPDATE $tabla SET name=:name,lastname=:lastname,email=:email, age=:age, address=:address, is_active=:is_active, created_at=:created_at WHERE id=:id");				
+		public function updateSettingModel($datosModel, $tabla){
+				$statement = Conexion::conectar()->prepare("UPDATE $tabla SET name=:name,lastname=:lastname,password=:password,is_admin=:is_admin,is_active=:is_active WHERE id=:id");				
 
 				$statement->bindParam(":name",$datosModel["name"],PDO::PARAM_STR);
-				$statement->bindParam(":lastname",$datosModel["lastname"],PDO::PARAM_STR);				
-				$statement->bindParam(":email",$datosModel["email"],PDO::PARAM_STR);				
-				$statement->bindParam(":age",$datosModel["age"],PDO::PARAM_STR);				
-				$statement->bindParam(":address",$datosModel["address"],PDO::PARAM_STR);				
-				$statement->bindParam(":is_active",$datosModel["is_active"],PDO::PARAM_STR);				
-				$statement->bindParam(":created_at",$datosModel["created_at"],PDO::PARAM_STR);				
+				$statement->bindParam(":lastname",$datosModel["lastname"],PDO::PARAM_STR);							
+				$statement->bindParam(":password",$datosModel["password"],PDO::PARAM_STR);				
+				$statement->bindParam(":is_admin",$datosModel["is_admin"],PDO::PARAM_INT);				
+				$statement->bindParam(":is_active",$datosModel["is_active"],PDO::PARAM_INT);				
 				$statement->bindParam(":id",$datosModel["id"],PDO::PARAM_INT);
 				$statement->execute();
 				
@@ -96,7 +94,7 @@ require_once "model/Conexion.php";
 
 			#BORAR USUARIOS
 		#--------------------------------------
-	/*	public function delInstructorModel($datosModel, $tabla){
+		public function delSettingModel($datosModel, $tabla){
 			$statement = Conexion::conectar()->prepare("DELETE FROM $tabla WHERE id=:id");
 			$statement->bindParam(":id",$datosModel,PDO::PARAM_INT);
 
@@ -112,7 +110,7 @@ require_once "model/Conexion.php";
 
 			}
 
-	*/
+
 
 
 	}

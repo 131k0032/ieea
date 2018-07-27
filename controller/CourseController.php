@@ -17,13 +17,40 @@ class CourseController{
 				//Llamado de la función datos y el objeto registroUusarioModel Model del Modelo
 				$respuesta = CourseModel::newCourseModel($datoController,"course");
 
-		if($respuesta=="success"){
-			// header("location:index.php?action=ok");
-			  print "<script>alert(\"Registro exitoso.\");window.location='course';</script>";
-			//var_dump($respuesta);
-		}else{
-			header("location:index.php");
-		}
+				if($respuesta=="success"){
+							// header("location:index.php?action=ok");
+							  // print "<script>alert(\"Registro exitoso.\");window.location='welcome';</script>";
+							  echo '<script>							
+						 			swal({
+						 					title: "Success",
+												text:"Info added successfully",
+												type:"success",
+												confirmButtonText:"Ok",
+						 					closeOnConfirm:false
+						 				},
+						 				function(isConfirm){
+						 					if(isConfirm){
+						 						window.location="course";
+						 					}
+						 				});
+						 		</script>';
+
+						}else{
+							  echo '<script>							
+						 			swal({
+						 					title: "Success",
+												text:"Error please try again",
+												type:"error",
+												confirmButtonText:"Ok",
+						 					closeOnConfirm:false
+						 				},
+						 				function(isConfirm){
+						 					if(isConfirm){
+						 						window.location="course";
+						 					}
+						 				});
+						 		</script>';
+						}
 		}
 	
 	}
@@ -47,8 +74,7 @@ class CourseController{
 	              <td>'.$item["course_name"].'</td>
 	              <td>'.$item["category_name"].'</td>	              
 	              <td style="width:130px;">
-	                <a href="index.php?action=editcourse&id='.$item['course_id'].'" class="btn btn-warning btn-xs">Editar</a> 
-	                <a href="index.php?action=course&idBorrar='.$item['course_id'].'" class="btn btn-danger btn-xs" >Eliminar</a>
+	               	<a href="index.php?action=editcourse&id='.$item['course_id'].'" class="btn btn-warning btn-xs">Editar curso</a> 
                 </td>
               </tr>';
 		}	
@@ -89,14 +115,14 @@ public function getAllCourseControllerForId(){
 		echo '  <input type="hidden" value="'.$respuesta["course_id"].'" name="idEditar">
 
 				<div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Name:</label>
+                  <label class="control-label col-sm-2" for="pwd">Nombre:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["course_name"].'" name="nombreEditar" class="form-control" id="pwd" placeholder="Enter name">
                   </div>
                 </div>
                
 	             <div class="form-group">
-	              <label class="control-label col-sm-2" for="psw">Category:</label>
+	              <label class="control-label col-sm-2" for="psw">Categoria:</label>
 	              <div class="col-sm-10">               
 	                <select class="form-control" name="categoriaEditar">';                             
 	            			if($respuesta["category_id"]!=null && $respuesta["category_id"]==1){
@@ -116,7 +142,7 @@ public function getAllCourseControllerForId(){
 
                 <div class="form-group"> 
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
                   </div>
                 </div>';
 
@@ -144,10 +170,38 @@ public function getAllCourseControllerForId(){
 			// echo $respuesta;
 				
 				if($respuesta=="success"){
-					  print "<script>alert(\"Cambios guardados.\");window.location='course';</script>";					
-				}else{
-					echo "Error";
+					// header("location:index.php?action=ok");
+					  // print "<script>alert(\"Registro exitoso.\");window.location='welcome';</script>";
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Info updated successfully",
+										type:"success",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="course";
+				 					}
+				 				});
+				 		</script>';
 
+				}else{
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Error please try again",
+										type:"error",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="course";
+				 					}
+				 				});
+				 		</script>';
 				}
 		}
 
@@ -166,9 +220,35 @@ public function getAllCourseControllerForId(){
 			$datosController=$_GET["idBorrar"];
 			$respuesta=CourseModel::delCourseModel($datosController,"course");
 			if ($respuesta=="success") {
-				print "<script>alert(\"Eliminado.\");window.location='course';</script>";				
+			  echo '<script>							
+		 			swal({
+		 					title: "Success",
+								text:"Info deleted successfully",
+								type:"success",
+								confirmButtonText:"Ok",
+		 					closeOnConfirm:false
+		 				},
+		 				function(isConfirm){
+		 					if(isConfirm){
+		 						window.location="course";
+		 					}
+		 				});
+		 		</script>';		
 			}else{
-				echo "error";
+				 echo '<script>							
+			 			swal({
+			 					title: "Success",
+									text:"Error please try again",
+									type:"error",
+									confirmButtonText:"Ok",
+			 					closeOnConfirm:false
+			 				},
+			 				function(isConfirm){
+			 					if(isConfirm){
+			 						window.location="course";
+			 					}
+			 				});
+			 		</script>';
 			}
 		}
 

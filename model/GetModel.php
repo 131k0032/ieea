@@ -12,6 +12,8 @@ class GetModel{
 			$url=="student"||
 			$url=="instructor"||
 			$url=="course"||								
+			$url=="setting"||								
+
 			//Actions
 			$url=="exit"||
 			//Editions
@@ -19,14 +21,13 @@ class GetModel{
 			$url=="editstudent" ||
 			$url=="editinstructor"||
 			$url=="editcourse" ||
+			$url=="editsetting" ||
 			// Adds
 			$url=="addwelcome" ||
 			$url=="addstudent" ||
 			$url=="addinstructor"||
-			$url=="addcourse"
-			
-			
-
+			$url=="addcourse"||
+			$url=="addsetting" 			
 			)
 		{
 			// entonces mandalo al que esté solicitando

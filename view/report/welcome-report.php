@@ -22,7 +22,7 @@ $hash2=sha1(md5("alloperations"));
 
 	$servidor="localhost";
     $usuario="root";
-    $contrasenia="";
+    $contrasenia="root";
     $basededatos="ieea";
     $conexion=mysqli_connect($servidor,$usuario,$contrasenia,$basededatos);
     mysqli_set_charset($conexion,"utf8");
@@ -197,13 +197,16 @@ $hash2=sha1(md5("alloperations"));
 
 
 	
+/*===========================================
+=            General information            =
+===========================================*/
 
  
-$html.='<header class="clearfix">
-      <div id="logo">
-        <img src="img/logo.png">
-      </div>
-      <h1>INVOICE 3-2-1</h1>
+$html.='<header class="clearfix">';
+      // <div id="logo">
+      //   <img src="img/logo.png">
+      // </div>
+      $html.='<h1>INVOICE 3-2-1</h1>
       <div id="company" class="clearfix">
         <div>Company Name</div>
         <div>455 Foggy Heights,<br /> AZ 85004, US</div>
@@ -219,10 +222,11 @@ $html.='<header class="clearfix">
       </div>
     </header>
     <main>
+    <h3>GENERAL INFORMATION</h3>
       <table>
         <thead>
           <tr>
-          	<th class="">No.</th>
+            <th class="">No.</th>
             <th class="">STUDENT</th>
             <th class="">INSTRUCTOR</th>
             <th>COURSE</th>
@@ -231,63 +235,63 @@ $html.='<header class="clearfix">
           </tr>
         </thead>
         <tbody>';
-		$resultado= mysqli_query($conexion,$query);
+        $resultado= mysqli_query($conexion,$query);
         if (mysqli_num_rows($resultado)>0) {
         $n=1;
         while($row=$resultado->fetch_assoc()){
-          // var_dump($resultado);                    	
+          // var_dump($resultado);                      
             $html.='<tr>
-            			<td class="">'.$n++.'</td>
-            			<td class="">'.$row["student_lastname"]." ".$row["student_name"].'</td>
-            			<td class="">'.$row["instructor_lastname"]." ".$row["instructor_name"].'</td>
-            			<td class="">'.$row["course_name"].'</td>
-            			<td class="">'.$row["category_name"].'</td>
-            			<td class="">'.$row["status_name"].'</td>
-          			</tr>';
-          		}
-        	}else{ 
+                        <td class="">'.$n++.'</td>
+                        <td class="">'.$row["student_lastname"]." ".$row["student_name"].'</td>
+                        <td class="">'.$row["instructor_lastname"]." ".$row["instructor_name"].'</td>
+                        <td class="">'.$row["course_name"].'</td>
+                        <td class="">'.$row["category_name"].'</td>
+                        <td class="">'.$row["status_name"].'</td>
+                    </tr>';
+                }
+            }else{ 
 
-         	$html.='<td class="">No hay registros</td>';
+            $html.='';
   
-  		}                                                               
+        }                                                               
           $html.='
           <tr>
             <td colspan="5" class="grand total" >CURSANDO</td>';  
-	        	$resultadoOnCourse= mysqli_query($conexion,$queryOnCourse);
-            	if($rowOnCourse=$resultadoOnCourse->fetch_assoc()){
-	            	$html.='<td class="grand total">'.$rowOnCourse["status_id"].'</td>';
-    	        }else{
-        	    	$html.='<td class="grand total">No hay registros</td>';
-              	}            
+                $resultadoOnCourse= mysqli_query($conexion,$queryOnCourse);
+                if($rowOnCourse=$resultadoOnCourse->fetch_assoc()){
+                    $html.='<td class="grand total">'.$rowOnCourse["status_id"].'</td>';
+                }else{
+                    $html.='<td class="grand total">No hay registros</td>';
+                }            
           $html.='
           </tr>
           <tr>
             <td colspan="5" class="grand total" >FINALIZADO</td>';
             $resultadoFinalized= mysqli_query($conexion,$queryFinalized);
             if($rowFinalized=$resultadoFinalized->fetch_assoc()){
-	            	$html.='<td class="grand total">'.$rowFinalized["status_id"].'</td>';
-    	        }else{
-        	    	$html.='<td class="grand total">No hay registros</td>';
-              	}            
+                    $html.='<td class="grand total">'.$rowFinalized["status_id"].'</td>';
+                }else{
+                    $html.='<td class="grand total">No hay registros</td>';
+                }            
           $html.='
           </tr>
            <tr>
             <td colspan="5" class="grand total" >DESERTADO</td>';
             $resultadoDeserted= mysqli_query($conexion,$queryDeserted);
             if($rowDeserted=$resultadoDeserted->fetch_assoc()){
-	            	$html.='<td class="grand total">'.$rowDeserted["status_id"].'</td>';
-    	        }else{
-        	    	$html.='<td class="grand total">No hay registros</td>';
-              	}             
+                    $html.='<td class="grand total">'.$rowDeserted["status_id"].'</td>';
+                }else{
+                    $html.='<td class="grand total">No hay registros</td>';
+                }             
           $html.='</tr>
           <tr>
             <td colspan="5" class="grand total">TOTAL</td>';
              $resultadoAllCourse= mysqli_query($conexion,$queryAllCourse);
             if($rowAllCourse=$resultadoAllCourse->fetch_assoc()){
-	            	$html.='<td class="grand total">'.$rowAllCourse["status_id"].'</td>';
-    	        }else{
-        	    	$html.='<td class="grand total">No hay registros</td>';
-              	} 
+                    $html.='<td class="grand total">'.$rowAllCourse["status_id"].'</td>';
+                }else{
+                    $html.='<td class="grand total">No hay registros</td>';
+                } 
             $html.='
           </tr>
         </tbody>
@@ -298,13 +302,25 @@ $html.='<header class="clearfix">
       </div>
     </main>';
 
+
+/*=====  End of General information  ======*/
+
+
+
+
+
+
+
+
+/*----------  Format print  ----------*/
+
 $mpdf = new mPDF('c','A4');	
 $css=file_get_contents('../report/css/style.css');
 $mpdf->writeHTML($css,1);	
 $mpdf->writeHTML($html);
 $mpdf->Output('reporte.pdf','I');
 
-
+/*----------  Format print  ----------*/
 
 
  ?>

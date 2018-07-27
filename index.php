@@ -11,6 +11,7 @@ require_once 'model/InstructorModel.php';
 require_once 'model/CourseModel.php';
 require_once 'model/WelcomeModel.php';
 require_once 'model/StatusModel.php';
+require_once 'model/SettingModel.php';
 
 
 /*=====  End of Models  ======*/
@@ -27,6 +28,7 @@ require_once 'controller/InstructorController.php';
 require_once 'controller/CourseController.php';
 require_once 'controller/WelcomeController.php';
 require_once 'controller/StatusController.php';
+require_once 'controller/SettingController.php';
 /*=====  End of Controllers  ======*/
 
 

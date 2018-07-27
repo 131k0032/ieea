@@ -193,6 +193,20 @@ color: #f9690e;
 /*=====  End of course.php  ======*/
 
 
+
+/*===============================
+=            Setting            =
+===============================*/
+#tableSetting .container{
+	padding-top: 50px;
+	background: white;
+	min-height: 450px;
+	border-radius: 10px;
+}
+
+/*=====  End of Setting  ======*/
+
+
 	
 
 /*========================================

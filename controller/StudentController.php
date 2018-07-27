@@ -2,32 +2,65 @@
 
 class StudentController{
 	
-	/*==================================
-	=            AddStudent            =
-	==================================*/
-	
-		public function newStudentController(){
+/*==================================
+=            AddStudent            =
+==================================*/
 
-		if(isset($_POST["usuarioregistro"])
-			){
-			$datoController=array(
-			"name"=>$_POST["usuarioregistro"],
-			"lastname"=>$_POST["apellidoregistro"],
-			"created_at"=>$date=date("Y-m-d H:i:s")
-			);
-				//Llamado de la función datos y el objeto registroUusarioModel Model del Modelo
-				$respuesta = StudentModel::newStudentModel($datoController,"student");
+	public function newStudentController(){
 
-		if($respuesta=="success"){						 
-			  print "<script>alert(\"Registro exitoso.\");window.location='student';</script>";				
-		}else{
-			header("location:index.php");
-		}
-		}
-	
+	if(isset($_POST["usuarioregistro"])
+		){
+		$datoController=array(
+		"name"=>$_POST["usuarioregistro"],
+		"lastname"=>$_POST["apellidoregistro"],
+		"created_at"=>$date=date("Y-m-d H:i:s")
+		);
+			//Llamado de la función datos y el objeto registroUusarioModel Model del Modelo
+			$respuesta = StudentModel::newStudentModel($datoController,"student");
+
+				if($respuesta=="success"){
+					// header("location:index.php?action=ok");
+					  // print "<script>alert(\"Registro exitoso.\");window.location='welcome';</script>";
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Info added successfully",
+										type:"success",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="student";
+				 					}
+				 				});
+				 		</script>';
+
+				}else{
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Error please try again",
+										type:"error",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="student";
+				 					}
+				 				});
+				 		</script>';
+				}
+
+
+
+
 	}
-	
-	/*=====  End of AddStudent  ======*/
+
+}
+
+/*=====  End of AddStudent  ======*/
 	
 
 /*========================================
@@ -47,8 +80,7 @@ class StudentController{
 	              <td>'.$item["lastname"].'</td>	              
 	              <td>'.$item["created_at"].'</td>	
 	              <td style="width:130px;">
-	                <a href="index.php?action=editstudent&id='.$item['id'].'" class="btn btn-warning btn-xs">Edit</a> 
-	                <a href="index.php?action=student&idBorrar='.$item['id'].'" class="btn btn-danger btn-xs" >Delete</a>
+	               	<a href="index.php?action=editstudent&id='.$item['id'].'" class="btn btn-warning btn-xs">Editar</a> 
                 </td>
               </tr>';
 		}	
@@ -63,9 +95,9 @@ class StudentController{
 
 public function getAllStudentControllerForId(){
 	$respuesta=StudentModel::getAllStudentModelForId("student");
-	//var_dump($respuesta);
-	foreach ($respuesta as $fila => $item) {
-		echo '<option value="'.$item['id'].'" >'.$item['lastname']. " " .$item['name'].'</option>';                                    
+	
+	foreach ($respuesta as $fila => $item) {		
+		echo '<option value="'.$item['id'].'" >'.$item['lastname']. " " .$item['name'].'</option>';		                                   
 	}
 
 }
@@ -92,21 +124,21 @@ public function getAllStudentControllerForId(){
 		echo '  <input type="hidden" value="'.$respuesta["id"].'" name="idEditar">
 
 				<div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Name:</label>
+                  <label class="control-label col-sm-2" for="pwd">Nombre:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["name"].'" name="nombreEditar" class="form-control" id="pwd" placeholder="Enter name">
                   </div>
                 </div>
 
                  <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Lastname:</label>
+                  <label class="control-label col-sm-2" for="pwd">Apellidos:</label>
                   <div class="col-sm-10"> 
                     <input type="text" value="'.$respuesta["lastname"].'" name="apellidoEditar" class="form-control" id="pwd" placeholder="Enter lastname">
                   </div>
                 </div> 
 
                 <div class="form-group">
-                  <label class="control-label col-sm-2" for="pwd">Created at:</label>
+                  <label class="control-label col-sm-2" for="pwd">Fecha registro:</label>
                   <div class="col-sm-10"> 
                     <input type="text" readonly value="'.$respuesta["created_at"].'" name="creadoEl" class="form-control" id="pwd" placeholder="Fecha de creación">
                   </div>
@@ -114,7 +146,7 @@ public function getAllStudentControllerForId(){
 
                 <div class="form-group"> 
                   <div class="col-sm-offset-2 col-sm-10">
-                    <button type="submit" class="btn btn-success">Submit</button>
+                    <button type="submit" class="btn btn-success">Actualizar</button>
                   </div>
                 </div>';
 
@@ -140,12 +172,39 @@ public function getAllStudentControllerForId(){
 				);
 			$respuesta=StudentModel::updateStudentModel($datosController,"student");
 			// echo $respuesta;
-				
 				if($respuesta=="success"){
-					  print "<script>alert(\"Cambios guardados.\");window.location='student';</script>";					
-				}else{
-					echo "Error";
+					// header("location:index.php?action=ok");
+					  // print "<script>alert(\"Registro exitoso.\");window.location='welcome';</script>";
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Info updated successfully",
+										type:"success",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="student";
+				 					}
+				 				});
+				 		</script>';
 
+				}else{
+					  echo '<script>							
+				 			swal({
+				 					title: "Success",
+										text:"Error please try again",
+										type:"error",
+										confirmButtonText:"Ok",
+				 					closeOnConfirm:false
+				 				},
+				 				function(isConfirm){
+				 					if(isConfirm){
+				 						window.location="student";
+				 					}
+				 				});
+				 		</script>';
 				}
 		}
 
@@ -159,18 +218,44 @@ public function getAllStudentControllerForId(){
 =            Delet Students            =
 ======================================*/
 
-	public function delStudentController(){
+/*	public function delStudentController(){
 		if(isset($_GET["idBorrar"])){
 			$datosController=$_GET["idBorrar"];
 			$respuesta=StudentModel::delStudentModel($datosController,"student");
 			if ($respuesta=="success") {
-				print "<script>alert(\"Eliminado.\");window.location='student';</script>";				
+			  echo '<script>							
+		 			swal({
+		 					title: "Success",
+								text:"Info deleted successfully",
+								type:"success",
+								confirmButtonText:"Ok",
+		 					closeOnConfirm:false
+		 				},
+		 				function(isConfirm){
+		 					if(isConfirm){
+		 						window.location="student";
+		 					}
+		 				});
+		 		</script>';		
 			}else{
-				echo "error";
+				 echo '<script>							
+			 			swal({
+			 					title: "Success",
+									text:"Error please try again",
+									type:"error",
+									confirmButtonText:"Ok",
+			 					closeOnConfirm:false
+			 				},
+			 				function(isConfirm){
+			 					if(isConfirm){
+			 						window.location="student";
+			 					}
+			 				});
+			 		</script>';
 			}
 		}
 
-	}
+	}*/
 
 }
 

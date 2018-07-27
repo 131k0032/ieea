@@ -38,8 +38,8 @@
         <div class="row">
            <div class="col-sm-12">
              <ul class="breadcrumb">
-                <li><a href="welcome">Welcome</a></li>                
-                <li class="active">Course</li>
+                <li><a href="welcome">Inicio</a></li>                
+                <li class="active">Curso</li>
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->
@@ -55,28 +55,28 @@
     <section class="wrap" id="tableCourse">
       <div class="container">
       <div class="row">
-        <div class="col-sm-5  col-sm-offset-4 col-xs-2 col-xs-offset-1">
+        <div class="col-sm-6  col-sm-offset-5 col-xs-5 col-xs-offset-4">
 
 
           <div class="btn-group">
-            <a href="addcourse"><button type="submit" class="btn btn-success">Add course</button></a><!-- .btn -->
+            <a href="addcourse"><button type="submit" class="btn btn-success">Añadir curso</button></a><!-- .btn -->
           </div><!-- .btn-group -->
 
-
+<!-- 
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle"
                     data-toggle="dropdown">
               Download report <span class="caret"></span>
-            </button><!-- .btn -->
-           
+            </button> --><!-- .btn -->
+<!--            
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Acción #1</a></li>
-              <li><a href="#">Acción #2</a></li>
+              <li><a href="view/report/student-report.php" target="_blank">Student report</a></li> -->
+              <!-- <li><a href="#">Acción #2</a></li>
               <li><a href="#">Acción #3</a></li>
               <li class="divider"></li>
-              <li><a href="#">Acción #4</a></li>
-            </ul><!-- .dropdown-menu -->
-          </div><!-- .btn-group -->
+              <li><a href="#">Acción #4</a></li> -->
+            <!-- </ul> --><!-- .dropdown-menu -->
+          <!-- </div> --><!-- .btn-group -->
 
         </div><!-- .cols -->
       </div><!-- .row -->
@@ -86,9 +86,9 @@
               <table id="course" class="table table-striped table-bordered dt-responsive nowrap">
                   <thead>
                     <tr>
-                        <th>Course name</th>
-                        <th>Category name</th>                        
-                        <th>Action</th>
+                        <th>Nombre Curso</th>
+                        <th>Categoria</th>                        
+                        <th>Acción</th>
                     </tr>
                 </thead>
                   <tbody>
@@ -96,7 +96,7 @@
                       <?php 
                           $user = new CourseController();
                           $user->getAllCourseController();
-                          $user->delCourseController();
+                          //$user->delCourseController();
                        ?>
                   </tbody>
               </table><!-- .table-->                         

@@ -38,8 +38,8 @@
         <div class="row">
            <div class="col-sm-12">
              <ul class="breadcrumb">
-                <li><a href="welcome">Welcome</a></li>                
-                <li class="active">Instructors</li>
+                <li><a href="welcome">Inicio</a></li>                
+                <li class="active">Instructor</li>
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->
@@ -55,28 +55,28 @@
     <section class="wrap" id="tableInstructor">
       <div class="container">
       <div class="row">
-        <div class="col-sm-5  col-sm-offset-4 col-xs-2 col-xs-offset-1">
+               <div class="col-sm-6  col-sm-offset-5 col-xs-5 col-xs-offset-4">
 
 
           <div class="btn-group">
-            <a href="addinstructor"><button type="submit" class="btn btn-success">Add instructor</button></a><!-- .btn -->
+            <a href="addinstructor"><button type="submit" class="btn btn-success">Añadir instructor</button></a><!-- .btn -->
           </div><!-- .btn-group -->
 
-
+<!-- 
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle"
                     data-toggle="dropdown">
               Download report <span class="caret"></span>
-            </button><!-- .btn -->
-           
+            </button> --><!-- .btn -->
+<!--            
             <ul class="dropdown-menu" role="menu">
-              <li><a href="#">Acción #1</a></li>
-              <li><a href="#">Acción #2</a></li>
+              <li><a href="view/report/student-report.php" target="_blank">Student report</a></li> -->
+              <!-- <li><a href="#">Acción #2</a></li>
               <li><a href="#">Acción #3</a></li>
               <li class="divider"></li>
-              <li><a href="#">Acción #4</a></li>
-            </ul><!-- .dropdown-menu -->
-          </div><!-- .btn-group -->
+              <li><a href="#">Acción #4</a></li> -->
+            <!-- </ul> --><!-- .dropdown-menu -->
+          <!-- </div> --><!-- .btn-group -->
 
         </div><!-- .cols -->
       </div><!-- .row -->
@@ -101,7 +101,7 @@
                       <?php 
                           $user = new InstructorController();
                           $user->getAllInstructorController();
-                          $user->delInstructorController();
+                          //$user->delInstructorController();
                        ?>
                   </tbody>
               </table><!-- .table-->                         

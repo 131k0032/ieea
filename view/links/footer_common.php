@@ -7,5 +7,5 @@
     <script src="view/datatable/js/jquery.dataTables.min.js"></script>
     <script src="view/datatable/js/dataTables.bootstrap.min.js"></script>    
     <script src="view/datatable/js/dataTables.responsive.min.js"></script>    
-    <script src="view/datatable/js/responsive.bootstrap.min.js"></script>
+    <script src="view/datatable/js/responsive.bootstrap.min.js"></script>    
     

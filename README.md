@@ -1,7 +1,7 @@
 # ieea
 Project telmi
 
-# how to install 
+# How to install 
 Download or clone the files (on c:\xampp/htdocs/)
 Create a database called "ieea" 
 Import the file ieea.sql 

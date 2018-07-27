@@ -22,7 +22,7 @@ $hash2=sha1(md5("alloperations"));
 
 	$servidor="localhost";
     $usuario="root";
-    $contrasenia="root";
+    $contrasenia="";
     $basededatos="ieea";
     $conexion=mysqli_connect($servidor,$usuario,$contrasenia,$basededatos);
     mysqli_set_charset($conexion,"utf8");

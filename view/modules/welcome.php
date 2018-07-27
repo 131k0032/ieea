@@ -68,7 +68,7 @@
           <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle"
                     data-toggle="dropdown">
-              Descargar reporte<span class="caret"></span>
+              Descargar reporte <span class="caret"></span>
             </button><!-- .btn -->
            
             <ul class="dropdown-menu" role="menu">

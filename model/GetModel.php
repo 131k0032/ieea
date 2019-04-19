@@ -13,6 +13,7 @@ class GetModel{
 			$url=="instructor"||
 			$url=="course"||								
 			$url=="setting"||								
+			$url=="galeria"||	
 
 			//Actions
 			$url=="exit"||
@@ -27,7 +28,10 @@ class GetModel{
 			$url=="addstudent" ||
 			$url=="addinstructor"||
 			$url=="addcourse"||
-			$url=="addsetting" 			
+			$url=="addsetting" ||
+			//Report 			
+			$url=="report" ||
+			$url=="reporttcpdf"
 			)
 		{
 			// entonces mandalo al que esté solicitando

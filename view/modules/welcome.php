@@ -3,7 +3,7 @@
  <?php  
      session_start();
         if(!$_SESSION['validar']){
-          header("location:home");
+          print "<script>window.location='home';</script>";
           exit();
         }
    ?>
@@ -41,6 +41,7 @@
              <ul class="breadcrumb">
                 <li><a href="welcome">Inicio</a></li>                
                 <li class="active">Todos los registros</li>
+                <!-- <?php //phpversion(); ?> -->
             </ul><!-- .breadcrumb -->
            </div><!-- .col    -->
         </div><!-- .row -->
@@ -72,7 +73,11 @@
             </button><!-- .btn -->
            
             <ul class="dropdown-menu" role="menu">
-              <li><a href="view/report/welcome-report.php" target="_blank"> General reporte</a></li>
+          <!--     <li><a href="view/report/welcome-report.php" target="_blank"> General reporte</a></li>
+              <li><a href="view/reports/index.php" target="_blank"> General reporte</a></li>    -->           
+              <li><a href="reporttcpdf" target="_blank"> Generar reporte con TCPDF</a></li>
+
+              
 <!--               <li><a href="#">Acción #2</a></li>
               <li><a href="#">Acción #3</a></li>
               <li class="divider"></li>

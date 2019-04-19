@@ -5,3 +5,8 @@ Options All -Indexes
 RewriteEngine on
 
 RewriteRule ^(\w+)$ index.php?action=$1
+
+# Reescribir la URL solicitada por el usuario
+#   Entrada:  clientes/NOMBRE/
+#   Salida: clientes.php?id=NOMBRE
+#RewriteRule ^clientes/(\w+)/?$ clientes.php?id=$1

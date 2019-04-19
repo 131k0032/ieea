@@ -59,6 +59,7 @@
                   <li><a href="instructor"><i class="fa fa-graduation-cap"> </i> Docentes</a></li>
                   <li><a href="course"><i class="fa fa-list"> </i> Talleres</a></li>
                   <li><a href="setting"><i class="fa fa-cog"> </i> Configuración</a></li>
+                  <li><a href="galeria"><i class="fa fa-cog"> </i> Prueba ajax</a></li>
                   <li><a href="exit"><i class="fa fa-sign-out"> </i> Salir</a></li>
                 </ul>
               </li>

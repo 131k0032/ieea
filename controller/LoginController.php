@@ -14,12 +14,12 @@
 			"password"=>$encriptar
 			);
 			$respuesta = LoginModel::loginUserModel($datoController,"user");
-		 	 var_dump($respuesta);		
+		 	 // var_dump($respuesta);		
 			if($respuesta["email"]==$_POST["emailacceso"] && $respuesta["password"]==$encriptar){
 				// echo "Hola perro".$respuesta["usuario"];
 
 					// inicia la sesion de nombre "validar" con valor verdadero
-					session_start();
+					// session_start(); Se inicia sesion en el home antes que todo html siempre al menos en php 7 en adelante
 					$_SESSION["validar"]=true;
 					$_SESSION["usuario"] = $respuesta["email"];			
 				  	echo '<script>							
@@ -35,13 +35,16 @@
 				 						window.location="welcome";
 				 					}
 				 				});
-				 		</script>';
+				 		</script>';	
+				 		var_dump($respuesta);
+				 					 		
 
 					echo '<div class="notice notice-info notice-sm">
 							<button class="btn m-progress btn-xs btn-default">Button</button>
 								<strong >Loading views please wait</strong>
 								<strong><meta http-equiv="refresh" content="2; url=welcome"></strong>	
 						 </div>';
+						 var_dump($respuesta);
 					}else{
 						// header("location:index.php?action=fallo");
 					print "<script>alert('Error al ingresar\nUsuario no reconocido.\nVuelva a intentarlo.');</script>";
@@ -55,4 +58,4 @@
 	}
 
 	
- ?>
+?>

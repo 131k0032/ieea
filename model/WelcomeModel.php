@@ -53,8 +53,7 @@ require_once "model/Conexion.php";
 							  INNER JOIN category ON category.id = course.category_id 
 							  INNER JOIN instructor_has_course ON  instructor_has_course.course_id=course.id
 							  INNER JOIN instructor ON instructor.id =instructor_has_course.instructor_id
-							  ORDER BY student_has_course.id ASC
-							
+							  ORDER BY student_has_course.id ASC							
 		
 							");
 				$statement->execute();
@@ -156,4 +155,4 @@ require_once "model/Conexion.php";
 
 	}
 
- ?>
+?>

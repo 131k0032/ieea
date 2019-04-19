@@ -1,6 +1,6 @@
 # ieea
 
-Project telmi
+Project ieea
 
 # How to install 
 

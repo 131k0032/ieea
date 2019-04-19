@@ -8,7 +8,7 @@ function confirmDelete() {
 event.preventDefault(); // prevent form submit
 var form = event.target.form; // storing the form
           swal({
-            title: "Está seguro?",
+            title: "¿Está seguro?",
             text: "Aun está a tiempo antes de eliminarlo.",
             type: "warning",
             showCancelButton: true,
@@ -20,9 +20,10 @@ var form = event.target.form; // storing the form
           },
         function(isConfirm){
           if (isConfirm) {
-            form.submit();          // submitting the form when user press yes
+            form.submit();          // submitting the form when user press yes            
           } else {
-            swal("Cancelado", "El registro no fue eliminado :)", "error");
+            swal("Cancelado", "El registro no fue eliminado :)", "error");            
+            
     }
   });
 }

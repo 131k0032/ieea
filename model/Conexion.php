@@ -11,5 +11,5 @@
 
 //$a=new conexion();
 //$a->conectar();
- ?>
+?>
 

@@ -7,7 +7,8 @@
     <!-- Font-awesome icons -->
     <link rel="stylesheet" href="view/assets/css/font-awesome/css/font-awesome.min.css">
     <!-- Google fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Graduate|Pacifico" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Graduate|Pacifico" rel="stylesheet"> -->
     <!-- Datatatble -->  
     <link rel="stylesheet" href="view/datatable/css/dataTables.bootstrap.min.css">    
     <link rel="stylesheet" href="view/datatable/css/responsive.bootstrap.min.css">
+

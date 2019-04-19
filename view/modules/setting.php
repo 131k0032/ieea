@@ -57,7 +57,7 @@
     <section class="wrap" id="tableSetting">
       <div class="container">
       <div class="row">
-        <div class="col-sm-5  col-sm-offset-4 col-xs-4 col-xs-offset-3">
+        <div class="col-sm-5  col-sm-offset-5 col-xs-5 col-xs-offset-4">
 
 
           <div class="btn-group">
@@ -65,20 +65,20 @@
           </div><!-- .btn-group -->
 
 
-          <div class="btn-group">
+        <!--   <div class="btn-group">
             <button type="button" class="btn btn-default dropdown-toggle"
                     data-toggle="dropdown">
               Descargar reporte <span class="caret"></span>
-            </button><!-- .btn -->
+            </button>
            
             <ul class="dropdown-menu" role="menu">
               <li><a href="view/report/welcome-report.php" target="_blank">User report</a></li>
-<!--               <li><a href="#">Acción #2</a></li>
+             <li><a href="#">Acción #2</a></li>
               <li><a href="#">Acción #3</a></li>
               <li class="divider"></li>
-              <li><a href="#">Acción #4</a></li> -->
-            </ul><!-- .dropdown-menu -->
-          </div><!-- .btn-group -->
+              <li><a href="#">Acción #4</a></li> 
+            </ul>
+          </div> -->
 
         </div><!-- .cols -->
       </div><!-- .row -->

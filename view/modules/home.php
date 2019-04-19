@@ -1,3 +1,4 @@
+<?php   session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -31,8 +32,7 @@
       </div><!-- .jumbotron -->
     </section> <!-- #tittle-enroll    -->
     <!--====  End of Title and enroll  ====-->
-    
-    
+
     <!--=========================================
     =            what can i do                  =
     ==========================================-->
@@ -100,21 +100,21 @@
     <!--=======================================
     =            Promotional video            =
     ========================================-->
-    <section class="wrap" id="promo-video">
+    <!-- <section class="wrap" id="promo-video">
       <div class="container">
         <div class="header-section">
           <h2>Mira le video de presentacion</h2>
           <div class="row">
             <div class="col-sm-8 col-sm-offset-2">
-              <div class="embed-responsive embed-responsive-16by9">
+              <div class="embed-responsive embed-responsive-16by9"> -->
                 <!-- <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/w6fLubIJHs8" frameborder="0" allowfullscreen></iframe> -->
-              </div>
-            </div><!-- .col -->
-          </div><!-- .row -->
-        </div>
-      </div><!-- .container -->
+              <!-- </div>
+            </div> --><!-- .col -->
+          <!-- </div> --><!-- .row -->
+        <!-- </div> -->
+      <!-- </div> --><!-- .container -->
       
-    </section>      
+    <!-- </section>   -->    
     <!--====  End of Promotional video  ====-->
     
     
